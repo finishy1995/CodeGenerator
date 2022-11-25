@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package account;
+option go_package = "./account";
+
+import "google/protobuf/descriptor.proto";
+
+extend google.protobuf.MethodOptions {
+  optional ApiType Type = 50001;
+  optional ConnCodeGenWay GenWay = 50002;
+}
+
+enum ApiType {
+  Common = 0;
+  Client = 1;
+  Server = 2;
+  Internal = 3;
+}
+
+enum ConnCodeGenWay {
+  NoGen = 0;
+  Mock = 1;
+  Rpc = 2;
+  All = 3;
+}
+
+message GetOrCreateAccountRequest {
+  // 用户账号 ID
+  string id = 1;
+  // 用户账号密码
+  string password = 2;
+}
+
+message AccountInfo {
+  // 昵称   此处用作示例，实际场景按需求添加字段
+  string nickname = 1;
+  repeated string key = 2;
+  ConnCodeGenWay way = 3;
+}
+
+message GetOrCreateAccountResponse {
+  // 错误码
+  uint32 errorCode = 1;
+  // 是否是新创建的账号
+  bool isCreated = 2;
+  // 账号具体信息
+  AccountInfo account = 3;
+}
+
+service Account {
+  // 获取或新账号创建
+  rpc getOrCreateAccount(GetOrCreateAccountRequest) returns(GetOrCreateAccountResponse) {option (Type) = Common; option (GenWay) = NoGen; };
+}
