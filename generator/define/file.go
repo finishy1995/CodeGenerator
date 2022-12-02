@@ -39,17 +39,19 @@ type DefaultFile struct {
 
 // file description params
 var (
-	DefaultFileName    = "file.name"
-	DefaultFileSuffix  = "file.suffix"
-	DefaultFileSkipGen = "file.skip_generate"
+	DefaultFileName      = "file.name"
+	DefaultFileSuffix    = "file.suffix"
+	DefaultFileSkipGen   = "file.skip_generate"
+	DefaultFileOverwrite = "file.overwrite"
 )
 
 func NewDefaultFile(task Task) File {
 	dict := task.GetTempDict()
 	dict.AddKeyValueMap(map[string]string{
-		DefaultFileName:    task.GetTplNameWithoutSuffix(),
-		DefaultFileSuffix:  "",
-		DefaultFileSkipGen: "false",
+		DefaultFileName:      task.GetTplNameWithoutSuffix(),
+		DefaultFileSuffix:    "",
+		DefaultFileSkipGen:   "false",
+		DefaultFileOverwrite: "true",
 	})
 
 	return &DefaultFile{
@@ -67,7 +69,20 @@ func (d *DefaultFile) Generate() {
 		return
 	}
 
-	filename := fmt.Sprintf("%s%s", d.task.FindInDict(DefaultFileName), d.task.FindInDict(DefaultFileSuffix))
+	filename := fmt.Sprintf(
+		"%s/%s%s",
+		d.task.GetOutputDir(),
+		d.task.FindInDict(DefaultFileName),
+		d.task.FindInDict(DefaultFileSuffix))
+
+	_, err = os.ReadFile(filename)
+	if err == nil {
+		// 文件存在且可读
+		overwrite, _ := strconv.ParseBool(d.task.FindInDict(DefaultFileOverwrite))
+		if !overwrite {
+			return
+		}
+	}
 	// Generate all upper dir
 	index := strings.LastIndex(filename, "/")
 	if index > 0 {
@@ -81,7 +96,7 @@ func (d *DefaultFile) Generate() {
 	d.content = deleteEOFFeed(d.content)
 
 	err = os.WriteFile(
-		fmt.Sprintf("%s/%s", d.task.GetOutputDir(), filename),
+		filename,
 		[]byte(d.content),
 		0666,
 	)
