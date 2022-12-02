@@ -19,11 +19,7 @@ type Mission struct {
 }
 
 func NewMission(dict define.Dictionary, dir string, output string) *Mission {
-	err := os.RemoveAll(output)
-	if err != nil {
-		log.Error("cannot clean output dir, please check permissions, error: %s", err.Error())
-	}
-	err = os.MkdirAll(output, 0660)
+	err := os.MkdirAll(output, 0660)
 	if err != nil {
 		log.Error("cannot create output dir, please check permissions, error: %s", err.Error())
 		return nil

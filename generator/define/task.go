@@ -157,7 +157,7 @@ func (d *DefaultTask) Exec() string {
 		}
 
 		content := d.process(line)
-		log.Debug("line: %d, obj: %+v \n\t Content: %s", line.GetIndex(), line, content)
+		log.Debug("line: %d, obj: %+v \n\t content: %s, len(content): %d", line.GetIndex(), line, content, len(content))
 		if d.currentFile != nil {
 			d.currentFile.Append(content)
 		}

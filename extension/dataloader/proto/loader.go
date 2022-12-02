@@ -108,8 +108,23 @@ func (l Loader) LoadFromFile(filePath string) (map[string]interface{}, error) {
 				for _, method := range methodDes {
 					methodMap := make(map[string]interface{})
 					methodMap["name"] = method.GetName()
-					methodMap["input_type"] = method.GetInputType()
-					methodMap["output_type"] = method.GetOutputType()
+
+					methodMessageType := method.GetInputType()
+					methodMap["input_type"] = methodMessageType
+					index := strings.LastIndex(methodMessageType, ".")
+					if index > -1 && index < len(methodMessageType)-1 {
+						methodMessageType = methodMessageType[index+1:]
+					}
+					methodMap["input_type_short"] = methodMessageType
+
+					methodMessageType = method.GetOutputType()
+					methodMap["output_type"] = methodMessageType
+					index = strings.LastIndex(methodMessageType, ".")
+					if index > -1 && index < len(methodMessageType)-1 {
+						methodMessageType = methodMessageType[index+1:]
+					}
+					methodMap["output_type_short"] = methodMessageType
+
 					methodOpts := method.GetOptions()
 					if methodOpts != nil {
 						methodOptionsMap := map[string]interface{}{}
