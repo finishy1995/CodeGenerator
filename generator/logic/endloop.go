@@ -1,8 +1,8 @@
 package logic
 
 import (
-	"CodeGenerator/generator/define"
-	"CodeGenerator/library/log"
+	"github.com/finishy1995/codegenerator/generator/define"
+	"github.com/finishy1995/codegenerator/library/log"
 )
 
 // EndLoop end loop block and generate again

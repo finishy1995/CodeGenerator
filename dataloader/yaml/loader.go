@@ -1,7 +1,7 @@
 package yaml
 
 import (
-	"CodeGenerator/dataloader"
+	"github.com/finishy1995/codegenerator/dataloader"
 	"gopkg.in/yaml.v3"
 )
 

@@ -1,7 +1,7 @@
 package proto
 
 import (
-	"CodeGenerator/dataloader/define"
+	"github.com/finishy1995/codegenerator/dataloader/define"
 	"github.com/jhump/protoreflect/desc/protoparse"
 	"google.golang.org/protobuf/types/descriptorpb"
 	"strconv"

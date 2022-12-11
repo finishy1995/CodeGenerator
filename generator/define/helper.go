@@ -1,7 +1,7 @@
 package define
 
 import (
-	"CodeGenerator/library/stack"
+	"github.com/finishy1995/codegenerator/library/stack"
 	"sort"
 	"strings"
 )

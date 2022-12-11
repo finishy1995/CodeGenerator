@@ -1,9 +1,9 @@
 package define
 
 import (
-	"CodeGenerator/library/log"
-	"CodeGenerator/library/utils"
 	"fmt"
+	"github.com/finishy1995/codegenerator/library/log"
+	"github.com/finishy1995/codegenerator/library/utils"
 	"reflect"
 	"strconv"
 	"strings"

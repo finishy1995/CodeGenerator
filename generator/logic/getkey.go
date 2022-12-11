@@ -1,9 +1,9 @@
 package logic
 
 import (
-	"CodeGenerator/generator/define"
-	"CodeGenerator/library/log"
 	"fmt"
+	"github.com/finishy1995/codegenerator/generator/define"
+	"github.com/finishy1995/codegenerator/library/log"
 	"strings"
 )
 

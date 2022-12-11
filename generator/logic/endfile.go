@@ -1,7 +1,7 @@
 package logic
 
 import (
-	"CodeGenerator/generator/define"
+	"github.com/finishy1995/codegenerator/generator/define"
 )
 
 // EndFile end file output

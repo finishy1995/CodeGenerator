@@ -1,9 +1,9 @@
 package main
 
 import (
-	"CodeGenerator/generator"
-	"CodeGenerator/generator/define"
-	"CodeGenerator/generator/logic"
+	"github.com/finishy1995/codegenerator/generator"
+	"github.com/finishy1995/codegenerator/generator/define"
+	"github.com/finishy1995/codegenerator/generator/logic"
 )
 
 func main() {

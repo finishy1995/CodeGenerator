@@ -1,7 +1,7 @@
 package datetime
 
 import (
-	"CodeGenerator/generator/define"
+	"github.com/finishy1995/codegenerator/generator/define"
 	"time"
 )
 

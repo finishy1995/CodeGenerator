@@ -1,9 +1,9 @@
 package generator
 
 import (
-	"CodeGenerator/generator/define"
-	"CodeGenerator/library/log"
-	"CodeGenerator/library/utils"
+	"github.com/finishy1995/codegenerator/generator/define"
+	"github.com/finishy1995/codegenerator/library/log"
+	"github.com/finishy1995/codegenerator/library/utils"
 	"os"
 	"strings"
 )

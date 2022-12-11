@@ -1,6 +1,6 @@
 package logic
 
-import "CodeGenerator/generator/define"
+import "github.com/finishy1995/codegenerator/generator/define"
 
 // Else using in if block, jump to another situation
 type Else struct {

@@ -1,8 +1,8 @@
 package define
 
 import (
-	"CodeGenerator/library/log"
-	"CodeGenerator/library/utils"
+	"github.com/finishy1995/codegenerator/library/log"
+	"github.com/finishy1995/codegenerator/library/utils"
 	"path"
 	"strings"
 )

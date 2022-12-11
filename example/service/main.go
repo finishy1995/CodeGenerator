@@ -1,17 +1,17 @@
 package main
 
 import (
-	"CodeGenerator/dataloader"
-	"CodeGenerator/extension/dataloader/proto"
-	"CodeGenerator/extension/logic/datetime"
-	"CodeGenerator/extension/logic/numberhelper"
-	"CodeGenerator/extension/logic/stringhelper"
-	"CodeGenerator/generator"
-	"CodeGenerator/generator/define"
-	"CodeGenerator/generator/logic"
-	"CodeGenerator/library/log"
 	"flag"
 	"fmt"
+	"github.com/finishy1995/codegenerator/dataloader"
+	"github.com/finishy1995/codegenerator/extension/dataloader/proto"
+	"github.com/finishy1995/codegenerator/extension/logic/datetime"
+	"github.com/finishy1995/codegenerator/extension/logic/numberhelper"
+	"github.com/finishy1995/codegenerator/extension/logic/stringhelper"
+	"github.com/finishy1995/codegenerator/generator"
+	"github.com/finishy1995/codegenerator/generator/define"
+	"github.com/finishy1995/codegenerator/generator/logic"
+	"github.com/finishy1995/codegenerator/library/log"
 	"os"
 	"os/exec"
 )

@@ -1,9 +1,9 @@
 package dataloader
 
 import (
-	"CodeGenerator/dataloader/define"
-	"CodeGenerator/library/log"
-	"CodeGenerator/library/utils"
+	"github.com/finishy1995/codegenerator/dataloader/define"
+	"github.com/finishy1995/codegenerator/library/log"
+	"github.com/finishy1995/codegenerator/library/utils"
 	"os"
 	"strings"
 )

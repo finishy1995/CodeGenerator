@@ -1,11 +1,11 @@
 package numberhelper
 
 import (
-	"CodeGenerator/generator/define"
-	"CodeGenerator/generator/logic"
-	"CodeGenerator/library/log"
 	"fmt"
 	"github.com/dengsgo/math-engine/engine"
+	"github.com/finishy1995/codegenerator/generator/define"
+	"github.com/finishy1995/codegenerator/generator/logic"
+	"github.com/finishy1995/codegenerator/library/log"
 )
 
 // Calc calculate a math expression

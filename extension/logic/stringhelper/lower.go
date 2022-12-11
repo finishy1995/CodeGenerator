@@ -1,8 +1,8 @@
 package stringhelper
 
 import (
-	"CodeGenerator/generator/define"
-	"CodeGenerator/generator/logic"
+	"github.com/finishy1995/codegenerator/generator/define"
+	"github.com/finishy1995/codegenerator/generator/logic"
 	"strings"
 )
 

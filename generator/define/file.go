@@ -1,8 +1,8 @@
 package define
 
 import (
-	"CodeGenerator/library/log"
 	"fmt"
+	"github.com/finishy1995/codegenerator/library/log"
 	"os"
 	"strconv"
 	"strings"

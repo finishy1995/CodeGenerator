@@ -1,7 +1,7 @@
 package logic
 
 import (
-	"CodeGenerator/generator/define"
+	"github.com/finishy1995/codegenerator/generator/define"
 )
 
 // Define key-value pair in temp dict, will overwrite key-value pair if exist already
