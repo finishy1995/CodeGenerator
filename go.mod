@@ -1,4 +1,4 @@
-module CodeGenerator
+module github.com/finishy1995/codegenerator
 
 go 1.19
 
